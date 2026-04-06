@@ -68,6 +68,7 @@
   /* ==================== HERO ==================== */
   .hero {
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -627,16 +628,25 @@
   }
 
   /* ==================== RESPONSIVE ==================== */
+  /* Tablet landscape & small desktop */
   @media (max-width: 1024px) {
     .hero { padding: 80px 32px; }
     .logo-main { font-size: 56px; letter-spacing: 10px; }
     .container { padding: 0 32px; }
+    section { padding: 88px 0; }
     .portfolio-card { padding: 36px 28px; }
-    .founder-section { grid-template-columns: 240px 1fr; }
-    .founder-text { padding: 48px 36px; }
+    .founder-section { grid-template-columns: 1fr 1.4fr; min-height: 440px; }
+    .founder-photo-wrap { min-height: 380px; }
+    .founder-text { padding: 56px 40px; }
+    .founder-quote { font-size: 18px; }
+    .approach-section { padding: 96px 0; }
+    .approach-section::before { font-size: 240px; right: -30px; }
     .approach-quote { font-size: 24px; }
+    .hero-stat-num { font-size: 32px; }
+    .hero-stats { gap: 40px; }
   }
 
+  /* Tablet portrait */
   @media (max-width: 768px) {
     .hero { padding: 60px 20px 120px; min-height: auto; }
     .logo { margin-bottom: 32px; }
@@ -684,8 +694,10 @@
     .founder-photo-label .name { font-size: 22px; }
     .footer-grid { flex-direction: column; gap: 28px; }
     .footer-top { flex-direction: column; align-items: flex-start; }
+    .approach-section::before { font-size: 180px; letter-spacing: 12px; }
   }
 
+  /* Mobile */
   @media (max-width: 480px) {
     .hero { padding: 48px 16px 100px; }
     .logo-main { font-size: 28px; letter-spacing: 4px; }
@@ -695,12 +707,36 @@
     .hero-stats { gap: 20px; }
     .hero-stat-num { font-size: 24px; }
     .container { padding: 0 16px; }
+    section { padding: 56px 0; }
     .portfolio-card { padding: 24px 16px; }
     .portfolio-card p { font-size: 12px; }
+    .approach-section { padding: 64px 0; }
     .approach-quote { font-size: 18px; }
+    .approach-section::before { font-size: 140px; letter-spacing: 8px; }
     .founder-photo-wrap { min-height: 250px; }
+    .founder-text { padding: 32px 18px; }
     .founder-stats { gap: 16px; }
     .founder-stat-num { font-size: 20px; }
+    .footer-grid { gap: 24px; }
+  }
+
+  /* Very small phones */
+  @media (max-width: 360px) {
+    .logo-main { font-size: 24px; letter-spacing: 3px; }
+    .hero h1 { font-size: 16px; }
+    .hero-stats { gap: 14px; }
+    .hero-stat-num { font-size: 20px; }
+    .approach-quote { font-size: 16px; }
+  }
+
+  /* Reduce motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 </style>
 </head>
